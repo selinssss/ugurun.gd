@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İyi ki Doğdun Aşkım</title>
+</head>
+  <body>
+    <h1>İyi ki Doğdun Aşkım</h1>
+
+    <div class="photo-container">
+      <img src="ugurselin.jpeg" alt="Uğur ve Büşra" />
+    </div>
+
+    <div id="countdown"></div>
+
+    <button class="button" onclick="showMessage()">BUTONA BAS BİRSÜRÜ</button>
+    <div class="surprise-message" id="surprise"></div>
+
+    <div class="poem-container">
+      <p id="poem">
+        Yok olmak isteğiyle kalbim attığı zaman, <br />
+        Bana: Yaşa der gibi gülen senin yüzündü. <br />
+        Dizlerim bir batakta yorgun yattığı zaman <br />
+        Bacaklarıma kuvvet veren senin hızındı. <br />
+        Yaşaran gözlerimde, güneş battığı zaman <br />
+        Sıcak bir yuva gibi tüten senin dizindi. <br />
+        Seni Çok seviyorum İyiki Doğdun Sevgilim <br />
+      </p>
+
+      <img src="ugurselin2.jpeg" alt="Uğur ve Büşra" />
+      <img src="ugurselin3.jpeg" alt="Uğur ve Büşra" />
+    </div>
+
+    <div class="video-section">
+      <h2 class="video-title">Buda sana son mesajım aşkım</h2>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/9pHDe81cc4o"
+          title="Uğur ve Büşra"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="footer">Tüm Hakları Aşkla Sabittir.</div>
+
+    <script>
+      // Geri Sayım
+      const countdown = document.getElementById("countdown");
+      const targetDate = new Date("2025-06-03T00:00:00").getTime();
+
+      const timer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `${days} gün ${hours} saat ${minutes} dakika ${seconds} saniye`;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          countdown.innerHTML = "İyi ki Doğdun Aşkım! 🎉🎊";
+          confettiEffect();
+        }
+      }, 1000);
+
+      // Sürpriz Mesajlar
+      const messages = [
+        "Aslan Kocammm",
+        "Kurban olduğumm!",
+        "seni Çok Seviyorum.",
+        "Sen benim her şeyimsin.",
+        "Mutlu yıllar aşkım!",
+      ];
+
+      function showMessage() {
+        const index = Math.floor(Math.random() * messages.length);
+        document.getElementById("surprise").innerText = messages[index];
+      }
+
+      // Konfeti Efekti
+      function confettiEffect() {
+        const duration = 5 * 1000;
+        const animationEnd = Date.now() + duration;
+        const defaults = {
+          startVelocity: 30,
+          spread: 360,
+          ticks: 60,
+          zIndex: 0,
+        };
+
+        function randomInRange(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        const interval = setInterval(function () {
+          const timeLeft = animationEnd - Date.now();
+
+          if (timeLeft <= 0) {
+            return clearInterval(interval);
+          }
+
+          confetti({
+            particleCount: 50,
+            angle: randomInRange(55, 125),
+            spread: randomInRange(50, 70),
+            origin: { y: 0.6 },
+          });
+        }, 250);
+      }
+    </script>
+    <!-- Video Alanı -->
+    <div class="video-alani" style="margin-top: 50px; text-align: center">
+      <h2
+        style="
+          font-family: 'Cursive', sans-serif;
+          color: #800020;
+          font-size: 28px;
+          margin-bottom: 15px;
+        "
+      ></h2>
+      
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  </body>
+</html>

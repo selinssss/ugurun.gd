@@ -1,0 +1,149 @@
+  @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;1,700&display=swap");
+
+      body {
+        background-color: #f5f5dc; /* Bej renk */
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        color: #2c2c2c;
+        text-align: center;
+        padding-bottom: 100px;
+      }
+
+      h1 {
+        font-size: 3.5em;
+        color: #800000; /* Bordo */
+        margin-top: 50px;
+        font-family: "Great Vibes", cursive;
+        font-style: italic;
+        text-shadow: 2px 2px #00000020;
+      }
+
+      .photo-container {
+        margin: 40px auto;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 6px solid #800000;
+        animation: rotate 10s linear infinite;
+      }
+
+      .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      #countdown {
+        font-size: 2.2em;
+        color: #800000;
+        margin: 30px;
+        font-style: italic;
+      }
+
+      .button {
+        background-color: #800000;
+        color: #fff;
+        border: none;
+        padding: 20px 40px;
+        font-size: 1.4em;
+        cursor: pointer;
+        border-radius: 12px;
+        margin: 30px;
+        transition: background-color 0.3s;
+        font-family: "Playfair Display", serif;
+      }
+
+      .button:hover {
+        background-color: #a00000;
+      }
+
+      .surprise-message {
+        font-size: 1.8em;
+        color: #000;
+        margin-top: 25px;
+        font-style: italic;
+      }
+
+      .poem-container {
+        width: 40%;
+        margin: 50px auto;
+        padding: 30px;
+        border: 4px solid #800000;
+        border-radius: 20px;
+        background-color: #fff8f0;
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+
+      .poem-container:hover {
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        transform: scale(1.02);
+      }
+
+      .poem-container p {
+        font-size: 1.6em;
+        font-style: italic;
+        font-family: "Great Vibes", cursive;
+        color: #800000;
+      }
+
+      .poem-container img {
+        width: 120px;
+        height: 120px;
+        border-radius: 15px;
+        margin: 15px;
+        object-fit: cover;
+      }
+
+      .video-section {
+        margin-top: 80px;
+        padding: 40px;
+        background-color: #f5f5dc; /* Bej arka plan */
+        text-align: center;
+      }
+
+      .video-title {
+        font-size: 2.5em;
+        color: #800000; /* Bordo */
+        font-family: "Great Vibes", cursive;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px #00000030;
+        font-style: italic;
+      }
+
+      .video-frame {
+        display: inline-block;
+        padding: 15px;
+        border: 4px solid #800000;
+        border-radius: 20px;
+        box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .video-frame:hover {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 22px rgba(0, 0, 0, 0.5);
+      }
+
+      .video-frame iframe {
+        border-radius: 12px;
+        width: 560px;
+        height: 315px;
+      }
+
+      .footer {
+        margin: 60px;
+        font-size: 1.2em;
+        color: #800000;
+        font-style: italic;
+      }
